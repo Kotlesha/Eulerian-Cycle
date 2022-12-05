@@ -9,7 +9,7 @@
             Console.Write("Введите, пожалуйста, вершину: ");
             string vertex = Console.ReadLine();
             int number = int.Parse(vertex);
-            Console.WriteLine($"Всевозможные эйлеровы цикл из вершины {number}:");
+            Console.WriteLine($"Эйлеров цикл из вершины {number}:");
             graph.Run(number - 1);
         }
     }
