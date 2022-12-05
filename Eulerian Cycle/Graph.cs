@@ -106,50 +106,6 @@
             }
 
             Console.WriteLine();
-            List<int> numbers = GetRepeatNumbers(cycle); 
-            foreach (int element in numbers)
-            {
-                int first = cycle.IndexOf(element);
-                int last = cycle.LastIndexOf(element);
-                List<int> temp = new();
-                temp.AddRange(cycle);
-                temp.Reverse(first + 1, last - 1);
-
-                foreach (int i in temp)
-                {
-                    Console.Write($"{i} ");
-                }
-
-                Console.WriteLine();
-            }
-        }
-
-        private List<int> GetRepeatNumbers(List<int> numbers)
-        {
-            Dictionary<int, int> occurence = new();
-            List<int> result = new();
-
-            foreach (int number in numbers)
-            {
-                if (!occurence.ContainsKey(number))
-                {
-                    occurence[number] = 1;
-                }
-                else
-                {
-                    occurence[number]++;
-                }
-            }
-
-            foreach (var element in occurence)
-            {
-                if (element.Value == 2)
-                {
-                    result.Add(element.Key);
-                }
-            }
-
-            return result;
         }
 
         public override string ToString()
